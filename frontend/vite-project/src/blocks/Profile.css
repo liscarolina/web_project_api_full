@@ -1,0 +1,125 @@
+.profile {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 882px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  margin-bottom: 50px;
+}
+
+.profile__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__avatar {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.profile__avatar:hover {
+  opacity: 60%;
+}
+
+.profile__layover {
+  display: none;
+  position: absolute;
+  left: 15%;
+}
+.profile__avatar:hover ~ .profile__layover {
+  display: initial;
+}
+
+.profile__info {
+  padding-left: 30px;
+  padding-right: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile__name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.33;
+  font-size: 42px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile__description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.21;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.profile__button_type_edit {
+  min-width: 24px;
+  max-height: 24px;
+  background: none;
+  border-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: -15px;
+  cursor: pointer;
+}
+
+.profile__button_type_edit:hover {
+  opacity: 60%;
+}
+
+.profile__icon_type_edit {
+  max-width: 10px;
+  color: #ffffff;
+}
+
+.profile__button_type_add {
+  min-width: 150px;
+  min-height: 50px;
+  background: none;
+  border-radius: 2px;
+  border-color: #ffffff;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.profile__button_type_add:hover {
+  opacity: 60%;
+}
+
+.profile__icon_type_add {
+  max-width: 22px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 860px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile__content {
+    display: block;
+    text-align: center;
+  }
+
+  .profile__button_type_add {
+    min-width: 282px;
+    margin-top: 20px;
+  }
+
+  .profile__button_type_edit {
+    margin-top: 20px;
+  }
+}

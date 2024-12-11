@@ -1,0 +1,71 @@
+.register__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.register__welcome {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 60px;
+  padding-bottom: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.21;
+}
+.register__form {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  min-width: 358px;
+}
+
+.register__input {
+  color: white;
+  font-size: 14px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  margin-bottom: 29.74px;
+}
+
+.register__input::placeholder {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.register__button {
+  margin-top: 150px;
+  font-size: 18px;
+  color: black;
+  line-height: 1.21;
+  background: #ffffff;
+  border: none;
+  border-radius: 2px;
+  min-height: 50px;
+  padding-right: 0;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.register__signin {
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.register__login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.register__login-link:hover {
+  color: gray;
+  text-decoration: underline;
+}

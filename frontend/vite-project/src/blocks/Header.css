@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 882px;
+  padding-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #545454;
+}
+
+.header__logo {
+  width: 173px;
+  padding-bottom: 41px;
+}
+.header__container {
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 350px;
+}
+
+.header__logout-link {
+  text-decoration: none;
+  color: white;
+}
+.header__email {
+  color: white;
+}
+
+.header__logout-link:hover {
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__register-link {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+.header__register-link:hover {
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__login-link {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+.header__login-link:hover {
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}

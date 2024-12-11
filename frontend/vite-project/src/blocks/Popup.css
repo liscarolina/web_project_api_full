@@ -1,0 +1,148 @@
+.popup {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.popup_opened {
+  display: flex;
+}
+
+.popup__button {
+  border: 0;
+  cursor: pointer;
+}
+
+.popup__button:hover {
+  border: 0;
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.popup__button_type_close {
+  position: absolute;
+  top: -35px;
+  right: -45px;
+  background: none;
+}
+
+.popup__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #ffffff;
+  color: black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.21;
+  min-width: 430px;
+  border-radius: 4px;
+  padding-bottom: 36.51px;
+}
+
+.popup__title {
+  margin-bottom: 0;
+  margin-top: 34px;
+  max-width: 358px;
+  text-align: center;
+}
+
+.popup__title-info {
+  font-size: 24px;
+  margin-bottom: 0;
+  margin-top: 34px;
+  width: 358px;
+  text-align: center;
+}
+
+.popup__image {
+  margin-top: 60px;
+}
+
+.popup__title-delete {
+  padding-bottom: 38px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.popup__title-profile-pic {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.popup__name {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 54px;
+  padding-bottom: 0px;
+  max-width: 358px;
+}
+
+.popup__item {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 29.74px;
+}
+
+.popup__item_invalid {
+  border-bottom: 1px solid #ff0000;
+  color: #ff0000;
+}
+
+.popup__error {
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: -20px;
+}
+
+.popup__item::placeholder {
+  color: #c4c4c4;
+  font-size: 14px;
+}
+
+.popup__button_type_send {
+  min-width: 358px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.21;
+  min-height: 50px;
+}
+
+.popup__button_type_send-inactive {
+  background-color: #ffffff;
+  color: #cccccc;
+  border: 1px solid #cccccc;
+}
+
+.popup__window-image {
+  max-height: 75vh;
+  max-width: 75vw;
+}
+
+.popup__window-name {
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.popup__container-window {
+  background: none;
+  color: white;
+  padding-bottom: 0;
+  font-size: 12px;
+  line-height: 1.21;
+}
