@@ -12,6 +12,12 @@ const {
   login,
 } = require("../controllers/users");
 
+userRouter.get("/crash-test", () => {
+  setTimeout(() => {
+    throw new Error("El servidor va a caer");
+  }, 0);
+});
+
 userRouter.post(
   "/signup",
   celebrate({
