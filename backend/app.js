@@ -21,7 +21,7 @@ app.use(cardRoutes);
 
 app.all("*", (req, res) => {
   res.status(404).send({
-    message: "Recurso solicitado no encontrado prueba",
+    message: "Recurso solicitado no encontrado prueba1",
   });
 });
 

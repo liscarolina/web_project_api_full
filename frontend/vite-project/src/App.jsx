@@ -166,7 +166,7 @@ function App() {
   function onRegister({ email, password }) {
     return auth
       .register(email, password)
-      .then(({ data }) => {
+      .then((data) => {
         if (data && data._id) {
           infoTooltipSetIsOpened(true);
         }
