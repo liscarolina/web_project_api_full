@@ -1,33 +1,33 @@
 const Card = require("../models/card");
-const NotFoundError = require("../middlewares/errors/notfounderror");
-const ReqError = require("../middlewares/errors/reqerror");
-const AuthError = require("../middlewares/errors/autherror");
+const { NotFoundError } = require("../middlewares/errors/notfounderror");
+const { ReqError } = require("../middlewares/errors/reqerror");
+const { AuthError } = require("../middlewares/errors/autherror");
 
-const getCards = (req, res) => {
+const getCards = (req, res, next) => {
   Card.find({})
     .populate(["owner", "likes"])
     .then((card) => {
       if (!card) {
         throw new NotFoundError("Recurso no encontrado");
       }
-      res.send({ data: card });
+      res.send(card);
     })
     .catch(next);
 };
 
-const createCard = (req, res) => {
+const createCard = (req, res, next) => {
   const { name, link } = req.body;
   Card.create({ name, link, owner: req.user._id })
     .then((card) => {
       if (!card) {
         throw new ReqError("Datos invalidos o incompletos");
       }
-      res.send({ data: card });
+      res.send(card);
     })
     .catch(next);
 };
 
-const deleteCard = (req, res) => {
+const deleteCard = (req, res, next) => {
   Card.findByIdAndDelete(req.params.cardId)
     .orFail(() => {
       throw new NotFoundError("No se ha encontrado ningun tarjeta con ese Id");
@@ -36,7 +36,7 @@ const deleteCard = (req, res) => {
     .catch(next);
 };
 
-const likeCard = (req, res) => {
+const likeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
     req.params.cardId,
     { $addToSet: { likes: req.user._id } },
@@ -46,11 +46,11 @@ const likeCard = (req, res) => {
     .orFail(() => {
       throw new NotFoundError("No se ha encontrado ningun tarjeta con ese Id");
     })
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
-const unlikeCard = (req, res) => {
+const unlikeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
     req.params.cardId,
     { $pull: { likes: req.user._id } },
@@ -59,7 +59,7 @@ const unlikeCard = (req, res) => {
     .orFail(() => {
       throw new AuthError("Se requiere autorizacion");
     })
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.send(card))
     .catch(next);
 };
 

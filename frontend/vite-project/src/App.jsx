@@ -97,9 +97,11 @@ function App() {
   function onCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
     api.handleCardLike(card._id, isLiked).then((newCard) => {
-      setInitialCards((state) =>
-        state.map((c) => (c._id === card._id ? newCard : c))
-      );
+      if (newCard) {
+        setInitialCards((state) =>
+          state.map((c) => (c._id === card._id ? newCard : c))
+        );
+      }
     });
   }
 
@@ -137,7 +139,7 @@ function App() {
   }
 
   function checkUserInfo() {
-    auth.getUserInfo().then(({ data }) => {
+    auth.getUserInfo().then((data) => {
       console.log(data);
       if (data) {
         setEmail(data.email);

@@ -1,5 +1,5 @@
 const cardRouter = require("express").Router();
-const auth = require("./middlewares/auth");
+const { auth } = require("../middlewares/auth");
 const { celebrate, Joi } = require("celebrate");
 
 const {
@@ -33,7 +33,7 @@ cardRouter.delete(
   deleteCard
 );
 cardRouter.put(
-  "/cards/:cardId/likes",
+  "/cards/likes/:cardId",
   celebrate({
     params: Joi.object().keys({
       cardId: Joi.string().alphanum(),
@@ -42,7 +42,7 @@ cardRouter.put(
   likeCard
 );
 cardRouter.delete(
-  "/cards/:cardId/likes",
+  "/cards/likes/:cardId",
   celebrate({
     params: Joi.object().keys({
       cardId: Joi.string().alphanum(),
