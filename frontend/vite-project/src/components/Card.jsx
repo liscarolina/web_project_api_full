@@ -26,9 +26,6 @@ function Card(props) {
         onClick={() => {
           props.handleDeleteClick(props.cardId);
         }}
-        // onClick={() => {
-        //   props.handleCardDelete(props.card);
-        // }}
       >
         <img
           className="elements__icon elements__icon_type_trash-cap"

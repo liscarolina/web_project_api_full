@@ -54,7 +54,6 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
-    console.log(token);
     if (token) {
       checkUserInfo();
     } else {
@@ -140,7 +139,6 @@ function App() {
 
   function checkUserInfo() {
     auth.getUserInfo().then((data) => {
-      console.log(data);
       if (data) {
         setEmail(data.email);
         setIsLogin(true);

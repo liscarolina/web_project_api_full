@@ -168,7 +168,6 @@ class Api {
 }
 
 const api = new Api("http://localhost:3000", {
-  //  authorization: "260c146d-e463-4081-80f1-261d849484a2",
   "Content-Type": "application/json",
 });
 

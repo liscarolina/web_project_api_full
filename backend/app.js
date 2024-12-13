@@ -12,8 +12,8 @@ app.use(cors("*"));
 app.listen(PORT, () => {});
 
 mongoose.connect("mongodb://localhost:27017/aroundb");
-app.use(express.json()); // para parsear application/json
-app.use(express.urlencoded({ extended: true })); // para parsear application/x-www-form-urlencoded, el formato de datos tradicional GET form
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 app.use(userRoutes);
@@ -29,7 +29,6 @@ app.use(errorLogger);
 app.use(errors());
 
 app.use((err, req, res, next) => {
-  console.log("error", err);
   const { statusCode = 500, message } = err;
   res.status(statusCode).send({
     err,
