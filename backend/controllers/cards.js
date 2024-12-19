@@ -25,7 +25,7 @@ const createCard = (req, res, next) => {
       Card.findById(card._id)
         .populate(["owner", "likes"])
         .then((cardFull) => {
-          res.send(card);
+          res.send(cardFull);
         });
     })
     .catch(next);
