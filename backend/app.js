@@ -8,7 +8,16 @@ const cors = require("cors");
 
 const { PORT = 3000 } = process.env;
 const app = express();
-app.use(cors("*"));
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:5173",
+    "https://lis.streetwidecollectionservices.com",
+    "https://www.lis.streetwidecollectionservices.com",
+  ],
+};
+app.use(cors(corsOptions));
 app.listen(PORT, () => {});
 
 mongoose.connect("mongodb://localhost:27017/aroundb");

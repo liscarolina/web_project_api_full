@@ -46,7 +46,7 @@ class Api {
 }
 
 const auth = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.lis.streetwidecollectionservices.com",
 });
 
 export default auth;
