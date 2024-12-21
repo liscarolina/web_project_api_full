@@ -1,6 +1,5 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm.jsx";
-
 import { useState } from "react";
 
 function AddPlacePopup({ title, onClose, isOpen, onAddCard }) {
@@ -23,6 +22,7 @@ function AddPlacePopup({ title, onClose, isOpen, onAddCard }) {
       link: newPlaceState.link,
     });
   }
+
   return (
     <PopupWithForm
       id="add-popup"

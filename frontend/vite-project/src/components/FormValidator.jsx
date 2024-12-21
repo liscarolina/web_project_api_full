@@ -14,13 +14,11 @@ export default class FormValidator {
     );
     this._toggleButtonState(formItems, submitButtonSelector);
     formItems.forEach((formItem) => {
+      this._checkInputValidity(formItem, formSelector);
+
       formItem.addEventListener("input", (evt) => {
         evt.preventDefault();
-        if (!formItem.validity.valid) {
-          this._showInputError(formSelector, formItem);
-        } else {
-          this._hideInputError(formSelector, formItem);
-        }
+        this._checkInputValidity(formItem, formSelector);
         this._toggleButtonState(formItems, submitButtonSelector);
       });
     });
@@ -30,6 +28,7 @@ export default class FormValidator {
     let formError = formSelector.querySelector(
       `.popup__error-${formItem.name}`
     );
+
     formError.textContent = formItem.validationMessage;
     formItem.classList.add("popup__item_invalid");
   }
@@ -54,5 +53,13 @@ export default class FormValidator {
     return formItems.some((formItem) => {
       return !formItem.validity.valid;
     });
+  }
+
+  _checkInputValidity(formItem, formSelector) {
+    if (!formItem.validity.valid) {
+      this._showInputError(formSelector, formItem);
+    } else {
+      this._hideInputError(formSelector, formItem);
+    }
   }
 }

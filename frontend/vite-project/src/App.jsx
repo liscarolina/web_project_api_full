@@ -211,13 +211,13 @@ function App() {
                           return (
                             <Card
                               card={card}
-                              cardLikes={card.likes}
-                              cardOwnerId={card.owner._id}
-                              cardName={card.name}
-                              cardImage={card.link}
-                              cardCounter={card.likes.length}
-                              key={card._id}
-                              cardId={card._id}
+                              cardLikes={card?.likes}
+                              cardOwnerId={card.owner?._id}
+                              cardName={card?.name}
+                              cardImage={card?.link}
+                              cardCounter={card?.likes.length}
+                              key={card?._id}
+                              cardId={card?._id}
                               handleDeleteClick={onDeleteCardClick}
                               handleCardClick={onImageCardClick}
                               handleCardLike={onCardLike}

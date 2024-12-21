@@ -41,7 +41,9 @@ function PopupWithForm(props) {
               maxLength="40"
               onChange={props.onChangeInput}
             />
-            <span className="popup__error popup__error-name"></span>
+            <span
+              className={`popup__error popup__error-${props.inputFirst.name}`}
+            ></span>
             <input
               className="popup__item popup__item_type_about"
               type={props.inputSecond.type}
@@ -53,7 +55,9 @@ function PopupWithForm(props) {
               maxLength="200"
               onChange={props.onChangeInput}
             />
-            <span className="popup__error popup__error-about"></span>
+            <span
+              className={`popup__error popup__error-${props.inputSecond.name}`}
+            ></span>
             <button
               className="popup__button popup__button_type_send"
               type="submit"
